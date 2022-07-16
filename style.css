@@ -3,12 +3,12 @@
     --secondaryBackgroundColour: #0369a1;
     --primaryTextColour: #18181b;
     --secondaryTextColour: #f0f9ff;
+    --headerHeight: 5rem;
+    font-size: calc(0.625rem + 0.4vw);
 }
 
 body {
     font-family: 'Roboto Condensed', sans-serif;
-    
-
 }
 
 a {
@@ -18,18 +18,28 @@ a {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 7fr;
+    grid-template-columns: 1.5fr 7fr;
 }
+
+.fa-solid {
+    font-size: 1.3rem;
+}
+
 /*********************
     Sidebar Section
 **********************/
 #side-bar {
     background-color: var(--secondaryBackgroundColour);
     color: var(--secondaryTextColour);
-    grid-row: 1/3;
+    grid-row: 1 / span 2;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: auto auto 1fr;
     justify-content: center;
+    gap: .5rem;
+}
+
+.fa-solid {
+    padding-right: .8rem;
 }
 
 .fa-cube {
@@ -38,30 +48,107 @@ main {
 
 #branding {
     font-size: 2rem;
-    background-color: blueviolet;
-
 }
-
-#shortcuts {
-    background-color: blueviolet;
-}
-
-#settings {
-    background-color: blueviolet;
-}
-
 
 /*********************
     Header Section
 **********************/
 #header {
-    background-color: blueviolet;
     grid-row: 1/2;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: var(--headerHeight) var(--headerHeight);
+    grid-template-columns: 3fr 1.5fr;
+    box-shadow: 0 5px #e2e8f0;
+    background-color: var(--primaryBackgroundColour);
 }
 
+#top-left-header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 2rem;
+}
 
+#search-bar {
+    background-color: #7dd3fc;
+    height: 1.5rem;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+}
+
+#search-button {
+    background-color: #7dd3fc;
+    border-radius: 15px;
+    height: 1.5rem;
+    margin-left: 1rem;
+    border: none;
+}
+
+#bot-left-header {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    padding-left: 2rem;
+}
+
+#user-icon-bot {
+    grid-row: 1 / 3;
+    grid-column: 1/2;
+    height: 5rem;
+    align-self: center;
+}
+
+#greetings {
+    margin: 0;
+    font-size: .8rem;
+    align-self: end;
+}
+
+#user-intro {
+    margin: 0;
+    font-weight: bold;
+}
+
+#top-right-header {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#user-name {
+    font-weight: bold;
+}
+
+#bot-right-header {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+}
+
+.bot-right-buttons {
+    height: 1.8rem;
+    width: 5rem;
+    border-radius: 18px;
+    border: none;
+    background-color: var(--secondaryBackgroundColour);
+    color: var(--secondaryTextColour);
+}
+
+#user-icon-top, #user-icon-bot {
+    height: 50px;
+    border-radius: 50%;
+}
 
 /*********************
     Main Section
@@ -70,27 +157,152 @@ main {
     background-color: rgba(62, 124, 0, 0.844);
     grid-row: 2/3;
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: 1fr 1fr;
+    background: #e5e7eb;
+    padding-bottom: 1rem;
 }
 
 #mc-projects {
     grid-column: 1/2;
     grid-row: 1/3;
+    padding: 0 2rem 0 2rem;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.project-cell {
+    background-color: var(--primaryBackgroundColour);
+    border-radius: 15px;
+    border-color: #404040;
+    height: 12rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr)
+}
+
+h3 {
+    font-weight: bolder;
+}
+
+.cell-title {
+    margin-bottom: 0;
+}
+
+.func-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/*********************
+   Announcement Section
+**********************/
+#mc-right-announcements {
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3rem 1fr;
+    gap: .5rem;
+    padding: 0 1rem;
+}
+
+#announcement-content {
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    background-color: var(--primaryBackgroundColour);
+}
+
+.announcement-border {
+    height: 1px;
+    background-color: #404040;
+    margin: 0 2rem;
+}
+
+.announcement-cell {
+    padding: 0 1rem 0 1rem;
+}
+
+.announcement-title {
+    margin-bottom: 0;
+}
+
+.announcement-text {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*********************
+   Announcement Section
+**********************/
+
+#mc-right-trending {
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+    padding: 0 1rem;
+}
+
+#trending-container {
+    background: blueviolet;
+    border-radius: 15px;
+    background-color: var(--primaryBackgroundColour);
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+
+.trending-cell {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, auto);
+}
+
+.trending-icon {
+    height: 5rem;
+    border-radius: 50%;
+    grid-row: 1/3;
+    align-self: center;
+}
+
+.trending-tag {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-bottom: 0;
+}
+
+.trending-intro {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-top: 0;
 }
 
 
 /*********************
-    Main Section (Right)
+   Footer Section
 **********************/
-#mc-right-announcements {
-    grid-row: 1/2;
-    background-color:darkslategrey;
+footer {
+    background-color: var(--primaryBackgroundColour);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    
 }
 
-#mc-right-trending {
-    grid-row: 2/3;
-    background-color: crimson;
+footer > p {
+    justify-self: flex-end;
+    align-self: center;
+    padding-right: 1rem;
+}
+
+footer > a {
+    justify-self: flex-start;
+    align-self: center;
 }
 
 .fa-github {

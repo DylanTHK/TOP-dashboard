@@ -65,23 +65,26 @@
             </div>
         </section>
         <section id="header">
-            <div id="top-header">
-                <input id="search-bar" type="text" placeholder="Search">
+            <div id="top-left-header">
+                <input id="search-bar" type="text">
                 <button type="submit" id="search-button" for="search-bar">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
+            </div>
+            <div id="top-right-header">
                 <a href="" id="notifications"><i class="fa-solid fa-bell"></i></a>
                 <img id="user-icon-top" src="images/snailAvatar.png" alt="">
                 <a href="" id="user-name">Dylan Tan</a>
             </div>
-            <div id="bot-header">
+            <div id="bot-left-header">
                 <img id="user-icon-bot" src="images/snailAvatar.png" alt="">
-                <div href="" id="user-intro">
-                    <p>Dylan Tan (@DylanTanHK)</p>
-                </div>
-                <button id="new-button">New</button>
-                <button id="upload">Upload</button>
-                <button id="share">Share</button>
+                <p id="greetings">Hi there</p>
+                <p id="user-intro">Dylan Tan (@DylanTanHK)</p>
+            </div>
+            <div id="bot-right-header">
+                <button class="bot-right-buttons">New</button>
+                <button class="bot-right-buttons">Upload</button>
+                <button class="bot-right-buttons">Share</button>
             </div>
         </section>
         <section id="main-content">
@@ -146,18 +149,20 @@
             </div>
             <div id="mc-right-announcements">
                 <h3>Announcements</h3>
-                <div id="announcement-container">
-                    <div id="accouncement-cell">
-                        <p class="announcement-title">Site Maintenance</p>
-                        <p class="announcement-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis dolorum autem facilis ad vero hic incidunt. Voluptate, excepturi?</p>
-                    </div>
-                    <div id="accouncement-cell">
+                <div id="announcement-content">
+                    <div class="announcement-cell">
                         <p class="announcement-title">Community Day</p>
                         <p class="announcement-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis culpa quia sunt officiis. Praesentium, veritatis. Expedita.</p>
                     </div>
-                    <div id="accouncement-cell">
-                        <p class="announcement-title">Site Updates</p>
-                        <p class="announcement-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis laudantium e earum, alias temporibus vel!</p>
+                    <div class="announcement-border"></div>
+                    <div class="announcement-cell">
+                        <p class="announcement-title">Community Day</p>
+                        <p class="announcement-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis culpa quia sunt officiis. Praesentium, veritatis. Expedita.</p>
+                    </div>
+                    <div class="announcement-border"></div>
+                    <div class="announcement-cell">
+                        <p class="announcement-title">Community Day</p>
+                        <p class="announcement-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis culpa quia sunt officiis. Praesentium, veritatis. Expedita.</p>
                     </div>
                 </div>
             </div>
